@@ -1,0 +1,30 @@
+from django.urls import path
+from it430 import views
+
+urlpatterns = [
+    path('activities/', views.ActivityView.as_view()),
+    path('activities/activity/<int:activity_id>/', views.ActivityIdView.as_view()),
+    path('activities/family/<int:family_id>/', views.ActivityFamilyView.as_view()),
+    path('customers/', views.CustomerView.as_view()),
+    path('customers/customer/<int:customer_id>/', views.CustomerIdView.as_view()),
+    path('customers/family/<int:family_id>/', views.CustomerFamilyView.as_view()),
+    path('families/', views.FamilyView.as_view()),
+    path('families/family/<int:family_id>/', views.FamilyIdView.as_view()),
+    path('goals/', views.GoalView.as_view()),
+    path('goals/goal/<int:goal_id>/', views.GoalIdView.as_view()),
+    path('goals/family/<int:family_id>/', views.GoalFamilyView.as_view()),
+    path('goals/family/<int:family_id>/type/<int:goal_type_id>', views.GoalFamilyGoalTypeView.as_view()),
+    path('goals/creator/<int:customer_id>/', views.GoalCustomerView.as_view()),
+    path('goals/creator/<int:customer_id>/type/<int:goal_type_id>/', views.GoalCustomerGoalTypeView.as_view()),
+    path('goaltypes/', views.GoalTypeView.as_view()),
+    path('goaltypes/goaltype/<int:goal_type_id>/', views.GoalTypeIdView.as_view()),
+    path('priorities/', views.PriorityView.as_view()),
+    path('priorities/priority/<int:priority_id>/', views.PriorityIdView.as_view()),
+    path('priorities/family/<int:family_id>/', views.PriorityFamilyView.as_view()),
+    path('tasks/', views.TaskView.as_view()),
+    path('tasks/task/<int:task_id>/', views.TaskIdView.as_view()),
+    path('tasks/family/<int:family_id>/', views.TaskFamilyView.as_view()),
+    path('tasks/assigned/<int:customer_id>/', views.TaskAssignedToView.as_view()),
+    path('login/', views.Login.as_view()),
+    path('employee_login/', views.EmployeeLogin.as_view()),
+]

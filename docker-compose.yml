@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+
+  it430-api:
+    build: .
+    image: compose_img_it430_api
+    # command: bash -c "python manage.py runserver 0.0.0.0:8000"
+    container_name: compose_c_it430_api
+    restart: no
+    shm_size: 128mb
+
+    ports:
+      - 80:80
